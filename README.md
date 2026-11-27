@@ -2,7 +2,7 @@
 
 Static site for **CONFEST 2027** — the umbrella conference on concurrency theory
 and formal methods — hosted by the IMT School for Advanced Studies Lucca,
-Lucca, Italy, **September 6–11, 2027**: pre-conference workshops on Monday, September 6, CONCUR Tuesday to Friday, September 7–10, QEST+FORMATS Wednesday to Friday, September 8–10, and post-conference workshops on Saturday, September 11.
+Lucca, Italy, **September 6–11, 2027**: pre-conference workshops on Monday, September 6, CONCUR Tuesday to Friday, September 7–10, QEST+FORMATS Tuesday to Thursday, September 7–9, and post-conference workshops on Saturday, September 11.
 
 Plain HTML + CSS. **No build step, no framework, no JavaScript.** Every page is a
 file you edit directly. Deployed on GitHub Pages from `docs/` on `main`.
