@@ -29,6 +29,8 @@
          (and remove it from the logo item, which is the Home link).
        * Adding a main conference = ONE extra <li> here,
          on every page. README.md lists all files to touch.
+     Note: this page has no nav entry (it is linked from the footer),
+     so no link carries aria-current here.
      ================================================================ -->
 <header class="site-header">
   <div class="container">
@@ -37,8 +39,13 @@
         <li class="nav-home"><a href="index.html">
           <img src="assets/img/logo/confest-2027-logo-white.svg"
                alt="CONFEST 2027 — home" width="320" height="240"></a></li>
+        <li><a href="concur/index.html">CONCUR</a></li>
+        <li><a href="qest-formats/index.html">QEST+FORMATS</a></li>
+        <!-- ADD-A-CONFERENCE: insert the new conference <li> here -->
+        <li><a href="workshops/index.html">Workshops</a></li>
+        <li><a href="venue.html">Venue</a></li>
         <li><a href="travel.html">Travel</a></li>
-        <li><a href="code-of-conduct.html" aria-current="page">Code of Conduct</a></li>
+        <li><a href="organization.html">Organization</a></li>
       </ul>
     </nav>
   </div>
@@ -91,7 +98,7 @@
       <ul>
         <li>Mirco Tribastone (IMT School for Advanced Studies Lucca, Italy) - General Chair</li>
       </ul>
-      <p>During the conference, reports may also be made in person to a member of the organizing team or at the registration desk.</p>
+      <p>During the conference, reports may also be made in person to a member of the <a href="organization.html">organizing team</a> or at the registration desk.</p>
     </div>
   </section>
 
@@ -121,8 +128,15 @@
       <div>
         <h2>Practical</h2>
         <ul>
+          <li><a href="venue.html">Venue</a></li>
           <li><a href="travel.html">Travel</a></li>
           <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="organization.html">Organization</a></li>
         </ul>
       </div>
       <div>
