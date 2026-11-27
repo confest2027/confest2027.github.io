@@ -5,7 +5,7 @@ and formal methods — hosted by the IMT School for Advanced Studies Lucca,
 Lucca, Italy, **September 6–11, 2027**: pre-conference workshops on Monday, September 6, CONCUR Tuesday to Friday, September 7–10, QEST+FORMATS Wednesday to Friday, September 8–10, and post-conference workshops on Saturday, September 11.
 
 Plain HTML + CSS. **No build step, no framework, no JavaScript.** Every page is a
-file you edit directly. Deployed on GitHub Pages from `site/` on `main`.
+file you edit directly. Deployed on GitHub Pages from `docs/` on `main`.
 
 Branching and publishing protocol: see [AGENTS.md](AGENTS.md).
 
@@ -15,8 +15,10 @@ Branching and publishing protocol: see [AGENTS.md](AGENTS.md).
 .
 ├── AGENTS.md                   Branch / publishing protocol
 ├── README.md
-├── .github/workflows/pages.yml Deploys site/ from main
-└── site/                       Everything published. Paths below are relative to site/.
+├── .githooks/pre-push          Runs tools/check-public.py before publishing
+├── tools/check-public.py       Pre-publication check
+└── docs/                       Everything published. Paths below are relative to docs/.
+    ├── .nojekyll               REQUIRED: stops GitHub Pages from running Jekyll
     ├── index.html              Umbrella homepage
     ├── registration.html       Central registration (all conferences + workshops)
     ├── program.html            Unified day-by-day program (times in CEST)
@@ -72,7 +74,7 @@ Branching and publishing protocol: see [AGENTS.md](AGENTS.md).
    still needs filling in with:
 
    ```sh
-   grep -rn 'class="tbd"' site --include='*.html'
+   grep -rn 'class="tbd"' docs --include='*.html'
    ```
 
 4. **Organizer entry format.** Every organizer/committee entry, everywhere, is
@@ -150,12 +152,13 @@ link (`class="external"`) — no folder needed.
 ## Deployment (GitHub Pages)
 
 Repository `confest2027/confest2027.github.io`, served at <https://confest2027.github.io/>.
-A GitHub Actions workflow (`.github/workflows/pages.yml`) publishes `site/` on every
-push to `main` that touches it. Jekyll is not involved. Work happens on `dev`;
-see [AGENTS.md](AGENTS.md) for how pages move to `main`.
+Pages source: *Deploy from a branch*, `main` / `/docs`. Every push to `main`
+republishes `docs/`. `docs/.nojekyll` must stay: without it Pages runs Jekyll,
+which drops `_`-prefixed files. Work happens on `dev`; see [AGENTS.md](AGENTS.md)
+for how pages move to `main`.
 
 Because all links are relative, the same tree also works when previewed
-locally (`python3 -m http.server -d site`) and at any other Pages root.
+locally (`python3 -m http.server -d docs`) and at any other Pages root.
 
 ## Content references
 
