@@ -4,6 +4,9 @@ name: Check public site
 on:
   pull_request:
     branches: [main]
+  push:
+    branches: ["publish/**"]
+  workflow_dispatch:
 
 jobs:
   check:
