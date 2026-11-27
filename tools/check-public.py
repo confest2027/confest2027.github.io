@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Checks site/ before it goes public (runs on pull requests to main).
+"""Checks docs/ before it goes public (run by .githooks/pre-push).
 
 Fails on: TBD placeholders, root-absolute links, and relative links or
-assets that point to files missing from site/.
+assets that point to files missing from docs/.
 """
 import re, sys
 from pathlib import Path
 
-root = Path(sys.argv[1] if len(sys.argv) > 1 else "site")
+root = Path(sys.argv[1] if len(sys.argv) > 1 else "docs")
 errors = []
 for page in sorted(root.rglob("*.html")):
     if page.name.startswith("_"):
