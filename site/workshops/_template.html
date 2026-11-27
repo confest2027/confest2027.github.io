@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!-- ================================================================
+     WORKSHOP PAGE TEMPLATE — DO NOT LINK THIS FILE FROM ANYWHERE
+     ================================================================
+     How to instantiate (see also README.md):
+
+       1. Copy this file to  workshops/<ascii-slug>/index.html
+          (lowercase ASCII slug with hyphens, e.g. workshops/express-sos/index.html).
+          NOTE THE EXTRA DIRECTORY LEVEL: the copy lives TWO levels deep,
+          so change EVERY ../ href in this file to ../../
+          (stylesheet, nav, footer, and in-text links alike).
+          Alternative for a single-file page: copy to workshops/<acronym>.html
+          at THIS level and keep the ../ prefixes unchanged.
+
+       2. Replace every ALL-CAPS placeholder (WORKSHOP-ACRONYM,
+          WORKSHOP FULL NAME, ...) and fill in or keep the
+          class="tbd" placeholders for facts not yet known.
+          WORKSHOP-DAY is either "Monday, 6 September 2027"
+          (pre-conference) or "Saturday, 11 September 2027"
+          (post-conference).
+          Organizer entries use EXACTLY: Name (Affiliation, Country) - Role
+
+       3. Add one row for the workshop to the table in workshops/index.html,
+          linking to the new page.
+
+     This file starts with an underscore so it sorts first and is clearly
+     not content; the repository ships a .nojekyll file so GitHub Pages
+     serves underscore-prefixed files anyway. Never add it to the nav.
+     ================================================================ -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WORKSHOP-ACRONYM 2027 — CONFEST 2027 Workshop</title>
+  <meta name="description" content="WORKSHOP-ACRONYM 2027 (WORKSHOP FULL NAME), an affiliated workshop of CONFEST 2027 in Lucca, Italy.">
+  <!-- Fonts: Inter 400/500/600. System sans-serif fallback in the stylesheet. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <!-- TEMPLATE lives one folder deep (../). When cloned to
+       workshops/<slug>/index.html it is TWO deep: change ../ to ../../ -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <!-- SVG favicon: the badge, navy on transparent. -->
+  <link rel="icon" href="../assets/img/logo/confest-2027-logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ================================================================
+     SITE HEADER — CANONICAL TEMPLATE
+     Copy this block verbatim to every page. Rules:
+       * Pages one folder deep (concur/, qest-formats/, workshops/):
+         prefix EVERY href and img src with ../
+         (e.g. ../registration.html)
+       * Workshop pages two levels deep (workshops/<slug>/): prefix ../../
+       * Set aria-current="page" on the link for the page you are on
+         (and remove it from the logo item, which is the Home link).
+       * Adding a main conference = ONE extra <li> here,
+         on every page. README.md lists all files to touch.
+     ================================================================ -->
+<header class="site-header">
+  <div class="container">
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li class="nav-home"><a href="../index.html">
+          <img src="../assets/img/logo/confest-2027-logo-white.svg"
+               alt="CONFEST 2027 — home" width="320" height="240"></a></li>
+        <li><a href="../concur/index.html">CONCUR</a></li>
+        <li><a href="../qest-formats/index.html">QEST+FORMATS</a></li>
+        <!-- ADD-A-CONFERENCE: insert the new conference <li> here -->
+        <li><a href="index.html" aria-current="page">Workshops</a></li>
+        <!-- The Workshops link keeps aria-current="page" on workshop pages so
+             the Workshops section stays highlighted. When cloned to
+             workshops/<slug>/index.html its href becomes ../index.html . -->
+        <li><a href="../program.html">Programme</a></li>
+        <li><a href="../speakers.html">Speakers</a></li>
+        <li><a href="../registration.html">Registration</a></li>
+        <li><a href="../venue.html">Venue</a></li>
+        <li><a href="../travel.html">Travel</a></li>
+        <li><a href="../accommodation.html">Accommodation</a></li>
+        <li><a href="../organization.html">Organization</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- /SITE HEADER -->
+
+<main id="main">
+
+  <!-- Workshop identity -->
+  <section class="section" aria-labelledby="ws-title">
+    <div class="container">
+      <h1 id="ws-title">WORKSHOP-ACRONYM 2027</h1>
+      <p class="muted">WORKSHOP FULL NAME — Nth International Workshop</p>
+      <p><strong>Affiliated workshop of <a href="../index.html">CONFEST 2027</a></strong> ·
+      WORKSHOP-DAY ·
+      San Francesco Complex, Lucca, Italy ·
+      Room: <span class="tbd">TBD</span></p>
+      <div class="notice">
+        <p>Registration is available through the central
+        <a href="../registration.html">CONFEST 2027 registration system</a>,
+        including a workshops-only category.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" aria-labelledby="ws-about">
+    <div class="container">
+      <h2 id="ws-about" class="section-title">About</h2>
+      <p>REPLACE WITH A CONCISE DESCRIPTION OF THE WORKSHOP, INCLUDING ITS SCOPE,
+      TOPICS, INTENDED AUDIENCE, RELATION TO CONFEST, AND, IF APPLICABLE, THE
+      HISTORY OF THE WORKSHOP SERIES.</p>
+    </div>
+  </section>
+
+  <!-- Organizers -->
+  <section class="section" aria-labelledby="ws-organizers">
+    <div class="container">
+      <h2 id="ws-organizers" class="section-title">Organizers</h2>
+      <!-- Organizer entries use EXACTLY: Name (Affiliation, Country) - Role
+           (name may be hyperlinked to a homepage). Keep unfilled rows as the
+           literal template inside <li class="tbd">. -->
+      <ul>
+        <li class="tbd">TBD (TBD, TBD) - Organizer</li>
+        <li class="tbd">TBD (TBD, TBD) - Organizer</li>
+      </ul>
+      <p>Contact: <span class="tbd">TBD</span></p>
+    </div>
+  </section>
+
+  <!-- Important dates -->
+  <section class="section" aria-labelledby="ws-dates">
+    <div class="container">
+      <h2 id="ws-dates" class="section-title">Important dates</h2>
+      <div class="dates-strip">
+        <dl>
+          <div>
+            <dt>Paper submission</dt>
+            <dd><span class="tbd">TBD</span></dd>
+          </div>
+          <div>
+            <dt>Notification</dt>
+            <dd><span class="tbd">TBD</span></dd>
+          </div>
+          <div>
+            <dt>Camera-ready</dt>
+            <dd><span class="tbd">TBD</span></dd>
+          </div>
+          <div>
+            <dt>Workshop day</dt>
+            <dd><span class="tbd">TBD</span></dd>
+          </div>
+        </dl>
+      </div>
+      <p class="muted">All deadlines are Anywhere on Earth (AoE).</p>
+    </div>
+  </section>
+
+  <!-- Submission -->
+  <section class="section" aria-labelledby="ws-submission">
+    <div class="container">
+      <h2 id="ws-submission" class="section-title">Submissions</h2>
+      <p>REPLACE WITH SUBMISSION CATEGORIES, PAGE LIMITS, FORMATTING REQUIREMENTS,
+      REVIEW PROCEDURE, AND PROCEEDINGS INFORMATION
+      (<span class="tbd">TBD</span>).</p>
+    </div>
+  </section>
+
+  <!-- Invited speaker -->
+  <section class="section" aria-labelledby="ws-invited">
+    <div class="container">
+      <h2 id="ws-invited" class="section-title">Invited speaker</h2>
+      <ul class="card-grid">
+        <li class="card">
+          <h3><span class="tbd">To be announced</span></h3>
+          <p class="card-sub">INVITED SPEAKER NAME (AFFILIATION, COUNTRY)</p>
+          <p>Talk title and abstract: <span class="tbd">TBD</span></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Program -->
+  <section class="section" aria-labelledby="ws-program">
+    <div class="container">
+      <h2 id="ws-program" class="section-title">Programme</h2>
+      <p>All times are CEST (UTC+2).</p>
+      <div class="table-scroll">
+        <table>
+          <caption>WORKSHOP-ACRONYM 2027 — <span class="tbd">date TBD</span></caption>
+          <thead>
+            <tr>
+              <th scope="col">Time</th>
+              <th scope="col">Title</th>
+              <th scope="col">Speaker</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tbd"></td>
+              <td class="tbd">Programme to be announced</td>
+              <td class="tbd"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================================================================
+     SITE FOOTER — CANONICAL TEMPLATE
+     Copy this block verbatim to every page, applying the same
+     ../ or ../../ href prefixing rule as the header.
+     ================================================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-cols">
+      <div>
+        <h2 class="footer-brand"><img src="../assets/img/logo/confest-2027-logo-grey.svg"
+                                      alt="CONFEST 2027" width="320" height="240"></h2>
+        <p>6–11 September 2027 · Lucca, Italy</p>
+        <p><a href="https://www.imtlucca.it/" class="external">IMT School for Advanced Studies Lucca</a></p>
+      </div>
+      <div>
+        <h2>Practical</h2>
+        <ul>
+          <li><a href="../registration.html">Registration</a></li>
+          <li><a href="../venue.html">Venue</a></li>
+          <li><a href="../travel.html">Travel</a></li>
+          <li><a href="../accommodation.html">Accommodation</a></li>
+          <li><a href="../code-of-conduct.html">Code of Conduct</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="../organization.html">Organization</a></li>
+          <li>Contact: <span class="tbd">TBD</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Past editions</h2>
+        <ul>
+          <li><a href="https://confest-2026.github.io/" class="external">CONFEST 2026 (Liverpool)</a></li>
+          <li><a href="https://conferences.au.dk/confest2025/" class="external">CONFEST 2025 (Aarhus)</a></li>
+          <li><a href="https://confest2024.github.io/" class="external">CONFEST 2024 (Calgary)</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-note">CONFEST 2027 · Piazza San Francesco 19, 55100 Lucca, Italy</p>
+  </div>
+</footer>
+<!-- /SITE FOOTER -->
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 744.7 189.9" role="img" aria-label="CONFEST 2027 logo lockup, light grey">
+<!-- CONFEST 2027 horizontal lockup: the wall circuit (states and arrowheads only,
+     the badge minus its interior wordmark) at scale 0.846 so its stroke lands on
+     5.5 and matches the wordmark's, with CONFEST 2027 set on one line at cap 40.
+     Geometry and wordmark metrics: NOTES.md. -->
+<!-- Single-colour build: #B4BBC7 (the site's gray-3) throughout, including the year.
+     Generated from confest-2027-lockup-mono.svg, and regenerated rather than edited:
+       sed 's/currentColor/#B4BBC7/g' confest-2027-lockup-mono.svg
+     It exists because an <img> cannot supply #B4BBC7 to the mono file (it falls
+     back to black, invisible on the navy), and the site footer wants the lockup in one
+     flat grey without inlining 4KB of SVG into every page's footer. -->
+<g transform="translate(4.0,5.7) scale(0.750000)">
+<path d="M 38.2,117.6 L 57.8,87.7 L 53.5,76.2 L 70.7,75.1 L 120.2,43.1 L 117.2,34.6 L 143.5,25.1 L 146.6,33.5 L 200.5,27.9 L 213.5,16.5 L 218.5,27.7 L 250.4,30.9" fill="none" stroke="#B4BBC7" stroke-width="6.5" stroke-linejoin="miter"/>
+<path d="M 258.3,32.1 L 246.7,35.7 L 248.2,25.3 Z" fill="#B4BBC7" stroke="none"/>
+<path d="M 278.9,50.1 L 290.0,90.9 L 301.7,96.6 L 290.3,108.9 L 279.1,153.5 L 285.7,164.1 L 269.2,168.5 L 243.1,186.4 L 243.8,198.2 L 226.8,194.0 L 210.3,198.3" fill="none" stroke="#B4BBC7" stroke-width="6.5" stroke-linejoin="miter"/>
+<path d="M 202.5,200.0 L 212.0,192.5 L 214.3,202.7 Z" fill="#B4BBC7" stroke="none"/>
+<path d="M 170.5,206.0 L 120.3,213.4 L 104.0,222.1 L 102.3,211.8 L 51.7,197.7 L 34.8,195.9 L 39.7,184.2 L 34.8,155.1" fill="none" stroke="#B4BBC7" stroke-width="6.5" stroke-linejoin="miter"/>
+<path d="M 33.1,147.3 L 40.6,156.9 L 30.4,159.1 Z" fill="#B4BBC7" stroke="none"/>
+<circle cx="29.7" cy="131.4" r="13" fill="none" stroke="#B4BBC7" stroke-width="6.5"/>
+<circle cx="274.4" cy="34.5" r="13" fill="none" stroke="#B4BBC7" stroke-width="6.5"/>
+<circle cx="186.6" cy="203.6" r="13" fill="none" stroke="#B4BBC7" stroke-width="6.5"/>
+</g>
+<path d="M 303.2,80.2 A 14.0 20.0 0 1 0 303.2,109.8" fill="none" stroke="#B4BBC7" stroke-width="7.33" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 336.5,75.0 A 14.0 20.0 0 1 0 336.5,115.0 A 14.0 20.0 0 1 0 336.5,75.0" fill="none" stroke="#B4BBC7" stroke-width="7.33" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 366.5,115.0 L 366.5,75.0 L 394.5,115.0 L 394.5,75.0" fill="none" stroke="#B4BBC7" stroke-width="7.33" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 411.1,115.0 L 411.1,75.0 L 433.8,75.0 M 411.1,95.0 L 430.2,95.0" fill="none" stroke="#B4BBC7" stroke-width="7.33" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 471.1,75.0 L 448.5,75.0 L 448.5,115.0 L 471.1,115.0 M 448.5,95.0 L 467.5,95.0" fill="none" stroke="#B4BBC7" stroke-width="7.33" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 505.6,77.9 A 12.0 10.0 0 1 0 497.1,95.0 A 12.0 10.0 0 1 1 488.6,112.0" fill="none" stroke="#B4BBC7" stroke-width="7.33" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 534.5,75.0 L 534.5,115.0 M 521.8,75.0 L 547.1,75.0" fill="none" stroke="#B4BBC7" stroke-width="7.33" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 574.5,87.5 A 14.0 12.7 0 0 1 602.5,87.5 L 574.5,115.0 L 602.5,115.0" fill="none" stroke="#B4BBC7" stroke-width="7.33" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 630.1,75.0 A 12.9 20.0 0 1 0 630.1,115.0 A 12.9 20.0 0 1 0 630.1,75.0" fill="none" stroke="#B4BBC7" stroke-width="7.33" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 658.3,87.5 A 14.0 12.7 0 0 1 686.3,87.5 L 658.3,115.0 L 686.3,115.0" fill="none" stroke="#B4BBC7" stroke-width="7.33" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 699.0,75.0 L 727.0,75.0 L 708.3,115.0" fill="none" stroke="#B4BBC7" stroke-width="7.33" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

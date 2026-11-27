@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-label="CONFEST 2027 logo, light grey">
+<!-- CONFEST 2027 logo: the walls of Lucca (surveyed plan: 10 baluardi + the
+     Piattaforma San Frediano tab) read as an automaton — three generic states at
+     San Donato, San Pietro and San Colombano, no initial/accepting decoration —
+     with the wordmark set inside the walls. Metrics in NOTES.md. -->
+<!-- Single-colour build: #B4BBC7 (the site's gray-3) throughout, including the year.
+     Generated from confest-2027-logo-mono.svg, and regenerated rather than edited:
+       sed 's/currentColor/#B4BBC7/g' confest-2027-logo-mono.svg
+     It exists because an <img> cannot supply #B4BBC7 to the mono file (it falls
+     back to black, invisible on the navy), and the site footer wants the badge in one
+     flat grey without inlining 4KB of SVG into every page's footer. -->
+<path d="M 38.2,117.6 L 57.8,87.7 L 53.5,76.2 L 70.7,75.1 L 120.2,43.1 L 117.2,34.6 L 143.5,25.1 L 146.6,33.5 L 200.5,27.9 L 213.5,16.5 L 218.5,27.7 L 250.4,30.9" fill="none" stroke="#B4BBC7" stroke-width="6.5" stroke-linejoin="miter"/>
+<path d="M 258.3,32.1 L 246.7,35.7 L 248.2,25.3 Z" fill="#B4BBC7" stroke="none"/>
+<path d="M 278.9,50.1 L 290.0,90.9 L 301.7,96.6 L 290.3,108.9 L 279.1,153.5 L 285.7,164.1 L 269.2,168.5 L 243.1,186.4 L 243.8,198.2 L 226.8,194.0 L 210.3,198.3" fill="none" stroke="#B4BBC7" stroke-width="6.5" stroke-linejoin="miter"/>
+<path d="M 202.5,200.0 L 212.0,192.5 L 214.3,202.7 Z" fill="#B4BBC7" stroke="none"/>
+<path d="M 170.5,206.0 L 120.3,213.4 L 104.0,222.1 L 102.3,211.8 L 51.7,197.7 L 34.8,195.9 L 39.7,184.2 L 34.8,155.1" fill="none" stroke="#B4BBC7" stroke-width="6.5" stroke-linejoin="miter"/>
+<path d="M 33.1,147.3 L 40.6,156.9 L 30.4,159.1 Z" fill="#B4BBC7" stroke="none"/>
+<circle cx="29.7" cy="131.4" r="13" fill="none" stroke="#B4BBC7" stroke-width="6.5"/>
+<circle cx="274.4" cy="34.5" r="13" fill="none" stroke="#B4BBC7" stroke-width="6.5"/>
+<circle cx="186.6" cy="203.6" r="13" fill="none" stroke="#B4BBC7" stroke-width="6.5"/>
+<path d="M 88.3,85.9 A 10.5 15.0 0 1 0 88.3,108.1" fill="none" stroke="#B4BBC7" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 113.2,82.0 A 10.5 15.0 0 1 0 113.2,112.0 A 10.5 15.0 0 1 0 113.2,82.0" fill="none" stroke="#B4BBC7" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 135.8,112.0 L 135.8,82.0 L 156.8,112.0 L 156.8,82.0" fill="none" stroke="#B4BBC7" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 169.2,112.0 L 169.2,82.0 L 186.2,82.0 M 169.2,97.0 L 183.5,97.0" fill="none" stroke="#B4BBC7" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 214.2,82.0 L 197.2,82.0 L 197.2,112.0 L 214.2,112.0 M 197.2,97.0 L 211.5,97.0" fill="none" stroke="#B4BBC7" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 240.1,84.2 A 9.0 7.5 0 1 0 233.8,97.0 A 9.0 7.5 0 1 1 227.4,109.8" fill="none" stroke="#B4BBC7" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 261.8,82.0 L 261.8,112.0 M 252.2,82.0 L 271.2,82.0" fill="none" stroke="#B4BBC7" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 111.0,133.4 A 10.5 9.5 0 0 1 132.0,133.4 L 111.0,154.0 L 132.0,154.0" fill="none" stroke="#B4BBC7" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 154.5,124.0 A 9.7 15.0 0 1 0 154.5,154.0 A 9.7 15.0 0 1 0 154.5,124.0" fill="none" stroke="#B4BBC7" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 177.0,133.4 A 10.5 9.5 0 0 1 198.0,133.4 L 177.0,154.0 L 198.0,154.0" fill="none" stroke="#B4BBC7" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 210.0,124.0 L 231.0,124.0 L 217.0,154.0" fill="none" stroke="#B4BBC7" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,853 @@
+/* ==========================================================================
+   CONFEST 2027 — shared site stylesheet
+   assets/css/style.css
+   --------------------------------------------------------------------------
+   This is the ONLY stylesheet. Every page links it with a relative path:
+     root pages:                <link rel="stylesheet" href="assets/css/style.css">
+     one level deep (concur/): <link rel="stylesheet" href="../assets/css/style.css">
+     two levels (workshops/x/): <link rel="stylesheet" href="../../assets/css/style.css">
+
+   Visual identity: IMT School for Advanced Studies Lucca palette.
+   Fonts: Inter 400/500/600 via Google Fonts <link> in each page's <head>;
+   the stack below falls back to system sans-serif, so pages render fine
+   offline or if the font fails to load. No JS anywhere.
+   ========================================================================== */
+
+/* ---------- Design tokens (IMT Lucca brand) ---------- */
+:root {
+  --primary: #062A47;        /* navy: header, links, primary buttons */
+  --primary-hover: #05243D;
+  --primary-deep: #031321;   /* darkest navy, hero overlay */
+  --accent: #F5852A;         /* orange: secondary buttons, highlights, .tbd */
+  --accent-hover: #F6974A;
+  --text: #051226;
+  --bg: #FFFFFF;
+  --gray-1: #EAECF0;         /* lightest surface */
+  --gray-2: #CFD4DB;         /* light border */
+  --gray-3: #B4BBC7;         /* border */
+  --gray-4: #62718A;         /* muted text, .tbd text */
+  --gray-5: #7D899F;         /* secondary muted */
+  --logo-navy: #152C47;
+
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+  --content-width: 72rem;
+  --radius: 6px;
+}
+
+/* ---------- Reset / base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- Typographic scale ---------- */
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  color: var(--primary);
+  font-weight: 600;
+  margin: 0 0 0.6em;
+}
+
+h1 { font-size: clamp(1.9rem, 4.5vw, 2.75rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 1.85rem); margin-top: 0; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1.05rem; }
+
+p, ul, ol, dl, table {
+  margin-top: 0;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover,
+a:focus {
+  color: var(--primary-hover);
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* External links get a glyph via class (no icon font needed) */
+.external::after {
+  content: " \2197";      /* north-east arrow */
+  font-size: 0.85em;
+}
+
+/* ---------- Layout helpers ---------- */
+.container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.section {
+  padding: 2.5rem 0;
+}
+
+.section + .section {
+  border-top: 1px solid var(--gray-1);
+}
+
+.section-title {
+  border-left: 5px solid var(--accent);
+  padding-left: 0.75rem;
+}
+
+.muted {
+  color: var(--gray-4);
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 0;
+  color: #fff;
+}
+
+/* ---------- Site header + nav (sticky, pure CSS, wraps on small screens) ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--primary);
+  color: #fff;
+  border-bottom: 3px solid var(--accent);
+}
+
+.site-header .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* The home link IS the badge - the mark already sets CONFEST 2027 inside the
+   walls, so a "Home" label beside it would put the name in the bar twice. It
+   lives in the nav row rather than in a separate brand block, which keeps the
+   header one row deep and the logo optically aligned with the other items. */
+.nav-home a {
+  display: flex;
+  align-items: center;
+  padding-block: 0.1rem;
+  padding-inline: 0 0.65rem;
+}
+
+.nav-home img {
+  display: block;
+  height: 2.75rem;         /* 44px tall, 59px wide - a nav row is ~39px, so the
+                              mark reads as a mark without pushing the bar open */
+  width: auto;
+}
+
+/* The mark is its own affordance: the pill background and the current-page
+   underline both fence it in awkwardly. Qualified with .site-nav to outrank the
+   generic nav-link states further down, which are equally specific. */
+.site-nav .nav-home a:hover,
+.site-nav .nav-home a:focus,
+.site-nav .nav-home a[aria-current="page"] {
+  background: none;
+  box-shadow: none;
+}
+
+.site-nav .nav-home a:hover img,
+.site-nav .nav-home a:focus img {
+  opacity: 0.85;
+}
+
+/* Phones: the nav wraps to three rows, so the mark gives a little back. */
+@media (max-width: 40em) {
+  .nav-home img {
+    height: 2.4rem;
+  }
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;         /* graceful wrap on narrow screens — no JS */
+  align-items: center;     /* the logo item is taller than a text item */
+  gap: 0.1rem 0.15rem;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  display: inline-block;
+  /* 0.55rem, not 0.65: the logo now shares this row, and the 11 labels plus the
+     mark need ~1090px of the container's 1112. */
+  padding: 0.45rem 0.55rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-radius: var(--radius);
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  background: var(--primary-hover);
+  color: var(--accent-hover);
+}
+
+/* Current page: set aria-current="page" on the matching nav link */
+.site-nav a[aria-current="page"] {
+  background: var(--primary-hover);
+  box-shadow: inset 0 -3px 0 var(--accent);
+}
+
+/* On very small screens the sticky bar would eat the viewport once wrapped;
+   let it scroll away instead. */
+@media (max-width: 40em) {
+  .site-header {
+    position: static;
+  }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background:
+    linear-gradient(rgba(3, 19, 33, 0.55), rgba(6, 42, 71, 0.75)),
+    var(--primary-deep) center / cover no-repeat;
+  color: #fff;
+  padding: 4rem 0 3.5rem;
+}
+
+/* Photo hero — homepage. Add hero--photo alongside hero; the plain .hero
+   (conference mini-sites) keeps the flat navy gradient.
+   To swap the photograph, change the url() below and nothing else: it is
+   resolved relative to THIS stylesheet, so the class works at any page depth.
+   If the file is missing the hero falls back to the navy gradient.
+   The scrim is heaviest on the left, where the badge sits, but it stays dark to
+   the right edge as well: the copy column reaches it, the cloister walls behind
+   are near-white, and the orange date line needs 4.5:1 against them. */
+.hero--photo {
+  background-image:
+    linear-gradient(100deg,
+      rgba(3, 19, 33, 0.88) 0%,
+      rgba(3, 19, 33, 0.82) 45%,
+      rgba(6, 42, 71, 0.72) 100%),
+    url("../img/hero-cloister.jpg");
+  /* Anchored to the top: the bell tower reaches the upper edge of the frame
+     and any downward shift decapitates it. The lawn crops away instead.
+     The generous padding is doing compositional work, not just spacing: the
+     photograph is 2:1, so a shallower band would crop the courtyard away and
+     leave nothing but roofs. */
+  background-position: center top;
+  padding: 9rem 0 8rem;
+}
+
+/* Narrow screens: text spans the full width, so darken the photo evenly
+   instead of left-to-right. Half-width copy of the same crop — the full
+   2560px file is wasted bandwidth on a phone. */
+@media (max-width: 42em) {
+  .hero--photo {
+    background-image:
+      linear-gradient(rgba(3, 19, 33, 0.86), rgba(6, 42, 71, 0.86)),
+      url("../img/hero-cloister-narrow.jpg");
+    padding: 4rem 0 3.5rem;
+  }
+}
+
+.hero h1 {
+  color: #fff;
+  margin-bottom: 0.3em;
+}
+
+/* Homepage hero: the badge IS the H1 - the mark already sets CONFEST 2027
+   inside the walls, so a typographic headline beside it would say the name
+   twice. It sits to the left of the copy, centred against the block as a whole
+   rather than hung off the first line. */
+.hero-layout {
+  display: flex;
+  align-items: center;
+  gap: 2.75rem;
+}
+
+.hero-logo {
+  flex: none;
+  margin: 0;
+}
+
+.hero-logo img {
+  display: block;
+  /* Scaled off the viewport, floor 7rem so the interior wordmark stays legible
+     (its cap height is an eighth of the badge). */
+  height: clamp(7rem, 15vw, 12.5rem);
+  width: auto;
+}
+
+/* 40em of copy, not the ~50em the row would otherwise allow: beside a 4:3 badge
+   the tagline would run to ~95 characters a line, well past comfortable. */
+.hero-copy {
+  max-width: 40em;
+}
+
+.hero-copy > :last-child {
+  margin-bottom: 0;
+}
+
+/* Below the two-column threshold the badge goes back above the copy. The
+   breakpoint is 48em, not the 42em the photo swaps at: the tagline needs
+   ~30em beside a 4:3 badge before the lines start snapping short. */
+@media (max-width: 48em) {
+  .hero-layout {
+    display: block;
+  }
+
+  .hero-logo {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.hero .tagline {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 400;
+  line-height: 1.55;
+  max-width: 46em;
+  margin-bottom: 0.75rem;
+}
+
+/* Conference heroes: headline, tagline, then the dates block. */
+.hero .tagline + .meta {
+  margin-top: 1.25rem;
+}
+
+/* Homepage: the dates block sits under the badge-and-taglines row, not beside
+   it, so the gap hangs off the row rather than off a tagline. */
+.hero-layout + .meta {
+  margin-top: 1.5rem;
+}
+
+.hero .meta {
+  font-size: 1.05rem;
+  margin: 0.25rem 0;
+}
+
+.hero .meta strong {
+  color: var(--accent-hover);
+}
+
+.hero a {
+  color: #fff;
+}
+
+/* ---------- Buttons ---------- */
+.btn,
+.btn-secondary {
+  display: inline-block;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.btn {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn:hover,
+.btn:focus {
+  background: var(--primary-hover);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: var(--accent);
+  color: var(--primary-deep);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: var(--accent-hover);
+  color: var(--primary-deep);
+}
+
+/* Disabled/TBD button: <span class="btn tbd" ...> or aria-disabled link */
+.btn[aria-disabled="true"],
+.btn.tbd,
+.btn-secondary[aria-disabled="true"] {
+  background: var(--gray-1);
+  color: var(--gray-4);
+  border: 1px dashed var(--accent);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ---------- Card grid (conferences, speakers, workshops) ----------
+   auto-fit: a third (or fourth) card slots in with zero layout change. */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: 1.25rem;
+  padding: 0;
+  margin: 0 0 1rem;
+  list-style: none;
+}
+
+.card {
+  border: 1px solid var(--gray-2);
+  border-top: 4px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card > * {
+  margin-block: 0;
+}
+
+.card:hover {
+  border-color: var(--gray-3);
+  box-shadow: 0 2px 8px rgba(5, 18, 38, 0.08);
+}
+
+.card h3 {
+  /* Reserve two lines so subtitles begin on the same baseline. */
+  min-block-size: 2.4em;
+}
+
+.card .card-sub {
+  color: var(--gray-4);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  /* Long conference names wrap to three lines at the narrowest
+     multi-column width; shorter subtitles reserve the same space. */
+  min-block-size: 4.35em;
+}
+
+.card .card-cta {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+/* Accent variant (e.g. Workshops card) */
+.card--accent {
+  border-top-color: var(--accent);
+}
+
+/* A single-column list does not need reserved alignment bands. */
+@media (max-width: 42em) {
+  .card h3,
+  .card .card-sub {
+    min-block-size: auto;
+  }
+}
+
+/* ---------- Tables ---------- */
+.table-scroll {
+  overflow-x: auto;        /* wide tables scroll inside, page never does */
+  margin-bottom: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+caption {
+  text-align: left;
+  font-weight: 600;
+  color: var(--primary);
+  padding-bottom: 0.4rem;
+}
+
+th, td {
+  border: 1px solid var(--gray-2);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+thead th {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+  background: var(--gray-1);
+}
+
+/* Row-header cells in body (e.g. fee-matrix row labels) */
+tbody th {
+  background: var(--gray-1);
+  font-weight: 600;
+}
+
+/* ---------- Important-dates strip ---------- */
+.dates-strip {
+  background: var(--gray-1);
+  border: 1px solid var(--gray-2);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+}
+
+.dates-strip dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: 0.75rem 2rem;
+  margin: 0;
+}
+
+.dates-strip dt {
+  font-weight: 600;
+  color: var(--primary);
+  /* Two-line label band keeps dates aligned across adjacent columns. */
+  min-block-size: 3.2em;
+}
+
+.dates-strip dd {
+  margin: 0.15rem 0 0;
+}
+
+/* ---------- Schedule chart (week overview) ----------
+   Six columns, Mon–Sat. One bar per event; grid-column placement
+   mirrors the event's days. Row 1 is the day header; the two workshop
+   bars span rows 2–3 so the main conferences sit between them, and the
+   evening items (reception, social activity) sit on row 4. On narrow
+   screens the bars stack in document order and the day-header row
+   (aria-hidden in the HTML) is hidden — each bar carries its own dates
+   in .sc-dates. */
+.schedule-chart {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0 0 1rem;
+  list-style: none;
+}
+
+.schedule-chart .sc-day {
+  text-align: center;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.schedule-chart .sc-bar {
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  font-weight: 500;
+}
+
+.schedule-chart .sc-dates {
+  display: block;
+  font-size: 0.85em;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+.sc-bar--concur {
+  grid-column: 2 / span 4;
+  grid-row: 2;
+  background: var(--primary);
+  color: #fff;
+}
+
+.sc-bar--qest-formats {
+  grid-column: 3 / span 3;
+  grid-row: 3;
+  background: var(--primary-deep);
+  color: #fff;
+}
+
+.sc-bar--reception {
+  grid-column: 1;
+  grid-row: 4;
+  background: var(--gray-1);
+  border: 1px solid var(--gray-3);
+}
+
+.sc-bar--social {
+  grid-column: 3;
+  grid-row: 4;
+  background: var(--gray-1);
+  border: 1px solid var(--gray-3);
+}
+
+.sc-bar--workshops {
+  grid-row: 2 / span 2;
+  background: var(--accent);
+  color: var(--primary-deep);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.sc-bar--workshops-pre {
+  grid-column: 1;
+}
+
+.sc-bar--workshops-post {
+  grid-column: 6;
+}
+
+@media (max-width: 39em) {
+  .dates-strip dt {
+    min-block-size: auto;
+  }
+}
+
+@media (max-width: 42em) {
+  .schedule-chart {
+    grid-template-columns: 1fr;
+  }
+  .schedule-chart .sc-day {
+    display: none;
+  }
+  .schedule-chart .sc-bar {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+/* ---------- News timeline ---------- */
+.news-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1.25rem;
+  border-left: 3px solid var(--gray-2);
+}
+
+.news-timeline li {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.news-timeline li::before {
+  content: "";
+  position: absolute;
+  left: -1.72rem;
+  top: 0.35em;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid #fff;
+}
+
+.news-timeline time {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gray-4);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Notice / warning boxes ---------- */
+.notice {
+  border: 1px solid var(--gray-2);
+  border-left: 5px solid var(--primary);
+  background: var(--gray-1);
+  border-radius: var(--radius);
+  padding: 0.9rem 1.1rem;
+  margin: 1rem 0;
+}
+
+.notice--warning {
+  border-left-color: var(--accent);   /* ZTL box, book-early warning, etc. */
+}
+
+.notice > :last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- The .tbd convention ----------
+   Every unknown 2027 fact is wrapped in class="tbd" — never guessed,
+   never omitted. Works on spans, table cells, list items, buttons.
+   Audit outstanding content with:  grep -rn 'class="tbd"' .          */
+.tbd {
+  display: inline-block;
+  border: 1px dashed var(--accent);
+  border-radius: 999px;
+  padding: 0 0.6em;
+  color: var(--gray-4);
+  background: #FDF3EA;      /* faint warm tint so placeholders stand out */
+  font-style: normal;
+  line-height: 1.5;
+}
+
+/* An empty .tbd element renders the literal label */
+.tbd:empty::before {
+  content: "TBD";
+}
+
+/* Block-level placeholders (cards, table cells, list items) */
+td.tbd, th.tbd, li.tbd, div.tbd, p.tbd {
+  display: block;
+  border-radius: var(--radius);
+  padding: 0.4rem 0.75rem;
+}
+
+li.tbd {
+  list-style: none;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  margin-top: 3rem;
+  background: var(--primary-deep);
+  color: var(--gray-2);
+  padding: 2.5rem 0 2rem;
+  font-size: 0.95rem;
+}
+
+.site-footer a {
+  color: #fff;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  color: var(--accent-hover);
+}
+
+.site-footer h2 {
+  color: #fff;
+  font-size: 1.05rem;
+  margin-bottom: 0.5em;
+}
+
+/* Footer badge, quiet grey. The grey file exists precisely for this: the mono
+   master paints itself in currentColor, which an <img> cannot supply (it falls
+   back to black, invisible on the navy). See assets/img/logo/NOTES.md. */
+.site-footer .footer-brand {
+  margin-bottom: 1rem;
+}
+
+.footer-brand img {
+  display: block;
+  height: 5.25rem;         /* 84px tall, 112px wide - the badge is 4:3, so it is
+                              sized by height to keep the column compact */
+  width: auto;
+}
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: 1.5rem;
+}
+
+.footer-cols ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-cols li {
+  margin-bottom: 0.35rem;
+}
+
+.site-footer .footer-note {
+  border-top: 1px solid var(--logo-navy);
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  color: var(--gray-5);
+}
+
+/* .tbd needs to stay readable on the dark footer */
+.site-footer .tbd {
+  background: transparent;
+  color: var(--gray-3);
+}
+
+/* ---------- Print (printable one-page program) ---------- */
+@media print {
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .btn,
+  .btn-secondary {
+    display: none;
+  }
+
+  body {
+    font-size: 10.5pt;
+    color: #000;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .section {
+    padding: 0.75rem 0;
+    break-inside: avoid;
+  }
+
+  .table-scroll {
+    overflow: visible;
+  }
+
+  thead th {
+    background: #fff;
+    color: #000;
+    border-bottom: 2px solid #000;
+  }
+
+  .tbd {
+    border-color: #999;
+    background: #fff;
+  }
+
+  /* The hero's scrim does not print, so its white type and white badge would
+     land invisible on the paper. */
+  .hero {
+    background: none;
+    color: #000;
+    padding: 0.75rem 0;
+  }
+
+  .hero h1,
+  .hero .meta strong {
+    color: #000;
+  }
+
+  .hero-logo img {
+    height: 5.5rem;
+    filter: grayscale(1) invert(1);
+  }
+}

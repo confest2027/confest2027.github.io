@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CONCUR 2027 — CONFEST 2027</title>
+  <meta name="description" content="CONCUR 2027, the 38th International Conference on Concurrency Theory, will be held at the IMT School for Advanced Studies Lucca, Italy, 7–10 September 2027.">
+  <!-- Fonts: Inter 400/500/600. System sans-serif fallback in the stylesheet. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <!-- One folder deep: every internal href and asset is prefixed ../ -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <!-- SVG favicon: the badge, navy on transparent. -->
+  <link rel="icon" href="../assets/img/logo/confest-2027-logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ================================================================
+     CONFERENCE-PAGE TEMPLATE
+     This file (and qest-formats/index.html, its exact structural
+     mirror) is the reference implementation of the conference-folder
+     pattern. To add a main conference:
+       1. Copy this folder to <ascii-slug>/ and edit index.html:
+          replace the conference name, About paragraph, CFP topics,
+          and proceedings note; keep every section id unchanged
+          (#about, #important-dates, #call-for-papers, #committees,
+          #invited-speakers, #accepted-papers, #awards).
+       2. Add one <li> to the nav of EVERY page (see the
+          ADD-A-CONFERENCE comment in each header; README.md lists
+          all files to touch).
+       3. Add one card on ../index.html (the grid auto-fits) and one
+          section on ../program.html.
+     Nothing else on the site changes. All umbrella links here use
+     the ../ prefix; keep it when copying to another folder at the
+     same depth.
+     ================================================================ -->
+
+<!-- ================================================================
+     SITE HEADER — CANONICAL TEMPLATE
+     Copy this block verbatim to every page. Rules:
+       * Pages one folder deep (concur/, qest-formats/, workshops/):
+         prefix EVERY href and img src with ../
+         (e.g. ../registration.html)
+       * Workshop pages two levels deep (workshops/<slug>/): prefix ../../
+       * Set aria-current="page" on the link for the page you are on
+         (and remove it from the logo item, which is the Home link).
+       * Adding a main conference = ONE extra <li> here,
+         on every page. README.md lists all files to touch.
+     ================================================================ -->
+<header class="site-header">
+  <div class="container">
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li class="nav-home"><a href="../index.html">
+          <img src="../assets/img/logo/confest-2027-logo-white.svg"
+               alt="CONFEST 2027 — home" width="320" height="240"></a></li>
+        <li><a href="../concur/index.html" aria-current="page">CONCUR</a></li>
+        <li><a href="../qest-formats/index.html">QEST+FORMATS</a></li>
+        <!-- ADD-A-CONFERENCE: insert the new conference <li> here -->
+        <li><a href="../workshops/index.html">Workshops</a></li>
+        <li><a href="../program.html">Programme</a></li>
+        <li><a href="../speakers.html">Speakers</a></li>
+        <li><a href="../registration.html">Registration</a></li>
+        <li><a href="../venue.html">Venue</a></li>
+        <li><a href="../travel.html">Travel</a></li>
+        <li><a href="../accommodation.html">Accommodation</a></li>
+        <li><a href="../organization.html">Organization</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- /SITE HEADER -->
+
+<main id="main">
+
+  <!-- Conference banner (navy gradient; no photo needed here) -->
+  <section class="hero">
+    <div class="container">
+      <h1>CONCUR 2027</h1>
+      <p class="tagline">38th International Conference on Concurrency Theory</p>
+      <p class="meta"><strong>7–10 September 2027</strong> · Lucca, Italy</p>
+      <p class="meta">Part of <a href="../index.html">CONFEST 2027</a></p>
+    </div>
+  </section>
+
+  <!-- Section sub-nav: anchor links only. If a section later grows into
+       its own file inside this folder, only these hrefs change. -->
+  <section class="section" aria-labelledby="about-title" id="about">
+    <div class="container">
+      <nav aria-label="CONCUR 2027 sections">
+        <p><strong>On this page:</strong>
+          <a href="#about">About</a> ·
+          <a href="#important-dates">Important dates</a> ·
+          <a href="#call-for-papers">Call for papers</a> ·
+          <a href="#committees">Committees</a> ·
+          <a href="#invited-speakers">Invited speakers</a> ·
+          <a href="#accepted-papers">Accepted papers</a> ·
+          <a href="#awards">Awards</a>
+        </p>
+      </nav>
+
+      <h2 id="about-title" class="section-title">About CONCUR</h2>
+      <p>Established in 1990, CONCUR is the principal international conference devoted to the theory and applications of concurrency.</p>
+    </div>
+  </section>
+
+  <!-- Important dates -->
+  <section class="section" aria-labelledby="dates-title" id="important-dates">
+    <div class="container">
+      <h2 id="dates-title" class="section-title">Important dates</h2>
+      <p>All deadlines are Anywhere on Earth (AoE).</p>
+      <div class="table-scroll">
+        <table>
+          <caption>CONCUR 2027 deadlines</caption>
+          <tbody>
+            <tr>
+              <th scope="row">Abstract submission</th>
+              <td class="tbd">TBD</td>
+            </tr>
+            <tr>
+              <th scope="row">Paper submission</th>
+              <td class="tbd">TBD</td>
+            </tr>
+            <tr>
+              <th scope="row">Author notification</th>
+              <td class="tbd">TBD</td>
+            </tr>
+            <tr>
+              <th scope="row">Camera-ready version</th>
+              <td class="tbd">TBD</td>
+            </tr>
+            <tr>
+              <th scope="row">Conference</th>
+              <td>7–10 September 2027</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call for papers -->
+  <section class="section" aria-labelledby="cfp-title" id="call-for-papers">
+    <div class="container">
+      <h2 id="cfp-title" class="section-title">Call for papers</h2>
+      <p>CONCUR 2027 invites submissions on all aspects of concurrency theory and its applications. Topics include:</p>
+      <ul>
+        <li>Basic models of concurrency such as abstract machines, domain-theoretic models, game-theoretic models, process algebras, graph transformation systems, Petri nets, hybrid systems, mobile and collaborative systems, probabilistic systems, real-time systems, biology-inspired systems, and synchronous systems;</li>
+        <li>Logics for concurrency, such as modal logics, probabilistic and stochastic logics, temporal logics, and resource logics;</li>
+        <li>Verification and analysis techniques for concurrent systems, such as abstract interpretation, atomicity checking, model checking, race detection, pre-order and equivalence checking, run-time verification, state-space exploration, static analysis, synthesis, testing, theorem proving, type systems, and security analysis;</li>
+        <li>Distributed algorithms and data structures: design, analysis, complexity, correctness, fault tolerance, reliability, availability, consistency, self-organization, self-stabilization, protocols;</li>
+        <li>Theoretical foundations of architectures, execution environments, and software development for concurrent systems, such as geo-replicated systems, communication networks, multiprocessor and multi-core architectures, shared and transactional memory, resource management and awareness, compilers and tools for concurrent programming, programming models such as session types, actors, and coordination languages.</li>
+      </ul>
+      <h3>Submission</h3>
+      <p>Submission instructions: <span class="tbd">TBD</span></p>
+      <h3>Proceedings</h3>
+      <p>Proceedings publication: <span class="tbd">TBD</span></p>
+    </div>
+  </section>
+
+  <!-- Committees -->
+  <section class="section" aria-labelledby="committees-title" id="committees">
+    <div class="container">
+      <h2 id="committees-title" class="section-title">Committees</h2>
+      <!-- Organizer entries use EXACTLY: Name (Affiliation, Country) - Role -->
+      <h3>Programme Committee Chairs</h3>
+      <ul>
+        <li>Ilaria Castellani (INRIA, France) - PC Chair</li>
+        <li>Nir Piterman (University of Gothenburg, Sweden) - PC Chair</li>
+      </ul>
+      <h3>Programme committee</h3>
+      <ul>
+        <li class="tbd">TBD (TBD, TBD) - PC Member</li>
+      </ul>
+      <h3>Steering committee</h3>
+      <ul>
+        <li class="tbd">TBD (TBD, TBD) - Steering Committee Member</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Invited speakers -->
+  <section class="section" aria-labelledby="speakers-title" id="invited-speakers">
+    <div class="container">
+      <h2 id="speakers-title" class="section-title">Invited speakers</h2>
+      <p class="tbd">Speakers to be announced</p>
+      <p><a href="../speakers.html">All invited speakers →</a></p>
+    </div>
+  </section>
+
+  <!-- Accepted papers -->
+  <section class="section" aria-labelledby="accepted-title" id="accepted-papers">
+    <div class="container">
+      <h2 id="accepted-title" class="section-title">Accepted papers</h2>
+      <p class="tbd">Available after author notification.</p>
+    </div>
+  </section>
+
+  <!-- Awards -->
+  <section class="section" aria-labelledby="awards-title" id="awards">
+    <div class="container">
+      <h2 id="awards-title" class="section-title">Awards</h2>
+      <h3>CONCUR Test-of-Time Award</h3>
+      <p class="tbd">TBD</p>
+      <h3>Best Paper Award</h3>
+      <p class="tbd">TBD</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" aria-labelledby="contact-title" id="contact">
+    <div class="container">
+      <h2 id="contact-title" class="section-title">Contact</h2>
+      <p><span class="tbd">TBD</span></p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================================================================
+     SITE FOOTER — CANONICAL TEMPLATE
+     Copy this block verbatim to every page, applying the same
+     ../ or ../../ href prefixing rule as the header.
+     ================================================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-cols">
+      <div>
+        <h2 class="footer-brand"><img src="../assets/img/logo/confest-2027-logo-grey.svg"
+                                      alt="CONFEST 2027" width="320" height="240"></h2>
+        <p>6–11 September 2027 · Lucca, Italy</p>
+        <p><a href="https://www.imtlucca.it/" class="external">IMT School for Advanced Studies Lucca</a></p>
+      </div>
+      <div>
+        <h2>Practical</h2>
+        <ul>
+          <li><a href="../registration.html">Registration</a></li>
+          <li><a href="../venue.html">Venue</a></li>
+          <li><a href="../travel.html">Travel</a></li>
+          <li><a href="../accommodation.html">Accommodation</a></li>
+          <li><a href="../code-of-conduct.html">Code of Conduct</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="../organization.html">Organization</a></li>
+          <li>Contact: <span class="tbd">TBD</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Past editions</h2>
+        <ul>
+          <li><a href="https://confest-2026.github.io/" class="external">CONFEST 2026 (Liverpool)</a></li>
+          <li><a href="https://conferences.au.dk/confest2025/" class="external">CONFEST 2025 (Aarhus)</a></li>
+          <li><a href="https://confest2024.github.io/" class="external">CONFEST 2024 (Calgary)</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-note">CONFEST 2027 · Piazza San Francesco 19, 55100 Lucca, Italy</p>
+  </div>
+</footer>
+<!-- /SITE FOOTER -->
+
+</body>
+</html>
