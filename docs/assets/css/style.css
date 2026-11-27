@@ -586,7 +586,7 @@ tbody th {
 }
 
 .sc-bar--qest-formats {
-  grid-column: 3 / span 3;
+  grid-column: 2 / span 3;
   grid-row: 3;
   background: var(--primary-deep);
   color: #fff;
