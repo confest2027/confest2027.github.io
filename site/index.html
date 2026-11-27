@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CONFEST 2027 — Lucca, Italy, 6–11 September 2027</title>
+  <meta name="description" content="CONFEST 2027 hosts CONCUR, QEST+FORMATS, and affiliated workshops at the IMT School for Advanced Studies Lucca, Italy, 6–11 September 2027.">
+  <!-- Fonts: Inter 400/500/600. System sans-serif fallback in the stylesheet. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <!-- Root page: no ../ prefix. Pages one folder deep prefix ../ , two deep ../../ -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- SVG favicon: the badge, navy on transparent. -->
+  <link rel="icon" href="assets/img/logo/confest-2027-logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ================================================================
+     SITE HEADER — CANONICAL TEMPLATE
+     Copy this block verbatim to every page. Rules:
+       * Pages one folder deep (concur/, qest-formats/, workshops/):
+         prefix EVERY href and img src with ../
+         (e.g. ../registration.html)
+       * Workshop pages two levels deep (workshops/<slug>/): prefix ../../
+       * Set aria-current="page" on the link for the page you are on
+         (and remove it from the logo item, which is the Home link).
+       * Adding a main conference = ONE extra <li> here,
+         on every page. README.md lists all files to touch.
+     ================================================================ -->
+<header class="site-header">
+  <div class="container">
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li class="nav-home"><a href="index.html" aria-current="page">
+          <img src="assets/img/logo/confest-2027-logo-white.svg"
+               alt="CONFEST 2027 — home" width="320" height="240"></a></li>
+        <li><a href="travel.html">Travel</a></li>
+        <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- /SITE HEADER -->
+
+<main id="main">
+
+  <!-- Hero. The photograph and its scrim live in .hero--photo in style.css
+       (assets/img/hero-cloister.jpg, with hero-cloister-narrow.jpg on small screens). -->
+  <section class="hero hero--photo">
+    <div class="container">
+      <!-- Badge and the two taglines share one row (.hero-layout stacks them
+           below 48em); the dates, place and buttons run full width underneath.
+           The badge stands in for the headline: it sets CONFEST 2027 inside the
+           walls itself, so an H1 in type next to it would repeat the name. -->
+      <div class="hero-layout">
+        <h1 class="hero-logo"><img src="assets/img/logo/confest-2027-logo-white.svg"
+                                   alt="CONFEST 2027" width="320" height="240"></h1>
+        <div class="hero-copy">
+          <p class="tagline">CONFEST 2027 brings together researchers, practitioners, and students working on concurrency theory, stochastic and timed systems, and formal methods.</p>
+          <p class="tagline">The programme comprises CONCUR, QEST+FORMATS, and affiliated workshops.</p>
+        </div>
+      </div>
+      <p class="meta"><strong>6–11 September 2027</strong></p>
+      <p class="meta">San Francesco Complex · Lucca, Italy</p>
+      <p class="meta" style="margin-top:1.25rem;">
+        <a class="btn-secondary" href="travel.html">Getting to Lucca</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Main conferences -->
+  <section class="section" aria-labelledby="conferences-title">
+    <div class="container">
+      <h2 id="conferences-title" class="section-title">Main conferences</h2>
+      <ul class="card-grid">
+        <li class="card">
+          <h3>CONCUR 2027</h3>
+          <p class="card-sub">38th International Conference on Concurrency Theory</p>
+          <p>Programme Committee Chairs:<br>
+          Ilaria Castellani (INRIA, France)<br>
+          Nir Piterman (University of Gothenburg, Sweden)</p>
+        </li>
+        <li class="card">
+          <h3>QEST+FORMATS 2027</h3>
+          <p class="card-sub">International Conference on Quantitative Evaluation of Systems and Formal Modeling and Analysis of Timed Systems</p>
+        </li>
+        <!-- ADD-A-CONFERENCE: insert the new conference card here (copy a card above).
+             The grid auto-fits; no layout change needed. -->
+        <li class="card card--accent">
+          <h3>Workshops</h3>
+          <p class="card-sub">Pre- and post-conference workshops</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Week at a glance -->
+  <section class="section" aria-labelledby="week-title">
+    <div class="container">
+      <h2 id="week-title" class="section-title">Conference schedule</h2>
+      <ul class="schedule-chart">
+        <li class="sc-day" aria-hidden="true">Mon 6 Sep</li>
+        <li class="sc-day" aria-hidden="true">Tue 7 Sep</li>
+        <li class="sc-day" aria-hidden="true">Wed 8 Sep</li>
+        <li class="sc-day" aria-hidden="true">Thu 9 Sep</li>
+        <li class="sc-day" aria-hidden="true">Fri 10 Sep</li>
+        <li class="sc-day" aria-hidden="true">Sat 11 Sep</li>
+        <li class="sc-bar sc-bar--workshops sc-bar--workshops-pre">Pre-conference workshops <span class="sc-dates">Mon 6 Sep</span></li>
+        <li class="sc-bar sc-bar--concur">CONCUR <span class="sc-dates">Tue 7 – Fri 10 Sep</span></li>
+        <li class="sc-bar sc-bar--qest-formats">QEST+FORMATS <span class="sc-dates">Wed 8 – Fri 10 Sep</span></li>
+        <li class="sc-bar sc-bar--reception">Welcome reception <span class="sc-dates">Mon 6 Sep, evening</span></li>
+        <li class="sc-bar sc-bar--social">Social activity <span class="sc-dates">Wed 8 Sep</span></li>
+        <li class="sc-bar sc-bar--workshops sc-bar--workshops-post">Post-conference workshops <span class="sc-dates">Sat 11 Sep</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section class="section" aria-labelledby="news-title">
+    <div class="container">
+      <h2 id="news-title" class="section-title">News</h2>
+      <!-- Newest entry FIRST. Copy an <li> to add news; keep the <time> datetime attribute. -->
+      <ol class="news-timeline">
+        <li>
+          <time datetime="2026-08-31">31 August 2026</time>
+          <p>The CONFEST 2027 website has launched.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Venue teaser -->
+  <section class="section" aria-labelledby="venue-title">
+    <div class="container">
+      <h2 id="venue-title" class="section-title">Venue</h2>
+      <p>CONFEST 2027 will be held at the <strong>San Francesco Complex</strong>, inside Lucca's Renaissance walls.</p>
+      <p>
+        <a class="btn" href="travel.html">Getting to Lucca</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Organization snippet -->
+  <section class="section" aria-labelledby="org-title">
+    <div class="container">
+      <h2 id="org-title" class="section-title">Organization</h2>
+      <!-- Organizer entries use EXACTLY: Name (Affiliation, Country) - Role -->
+      <ul>
+        <li>Mirco Tribastone (IMT School for Advanced Studies Lucca, Italy) - General Chair</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================================================================
+     SITE FOOTER — CANONICAL TEMPLATE
+     Copy this block verbatim to every page, applying the same
+     ../ or ../../ href prefixing rule as the header.
+     ================================================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-cols">
+      <div>
+        <h2 class="footer-brand"><img src="assets/img/logo/confest-2027-logo-grey.svg"
+                                      alt="CONFEST 2027" width="320" height="240"></h2>
+        <p>6–11 September 2027 · Lucca, Italy</p>
+        <p><a href="https://www.imtlucca.it/" class="external">IMT School for Advanced Studies Lucca</a></p>
+      </div>
+      <div>
+        <h2>Practical</h2>
+        <ul>
+          <li><a href="travel.html">Travel</a></li>
+          <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Past editions</h2>
+        <ul>
+          <li><a href="https://confest-2026.github.io/" class="external">CONFEST 2026 (Liverpool)</a></li>
+          <li><a href="https://conferences.au.dk/confest2025/" class="external">CONFEST 2025 (Aarhus)</a></li>
+          <li><a href="https://confest2024.github.io/" class="external">CONFEST 2024 (Calgary)</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-note">CONFEST 2027 · Piazza San Francesco 19, 55100 Lucca, Italy</p>
+  </div>
+</footer>
+<!-- /SITE FOOTER -->
+
+</body>
+</html>
