@@ -208,9 +208,9 @@ a:focus {
 
 .site-nav a {
   display: inline-block;
-  /* 0.55rem, not 0.65: the logo now shares this row, and the 11 labels plus the
-     mark need ~1090px of the container's 1112. */
-  padding: 0.45rem 0.55rem;
+  /* 0.45rem, not 0.65: the logo shares this row, and the 12 labels plus the
+     mark need ~1090px of the container's 1112 (with "Stay" for Accommodation). */
+  padding: 0.45rem 0.45rem;
   color: #fff;
   text-decoration: none;
   font-weight: 500;
@@ -543,16 +543,17 @@ tbody th {
 }
 
 /* ---------- Schedule chart (week overview) ----------
-   Six columns, Mon–Sat. One bar per event; grid-column placement
-   mirrors the event's days. Row 1 is the day header; the two workshop
-   bars span rows 2–3 so the main conferences sit between them, and the
-   evening items (reception, social activity) sit on row 4. On narrow
+   Eight columns, Sat 4 – Sat 11. One bar per event; grid-column
+   placement mirrors the event's days. Row 1 is the day header; the
+   AnnaLucaFest bar (Sat–Sun) and the two workshop bars span rows 2–3
+   so the main conferences sit between them, and the evening items
+   (reception, social activity) sit on row 4. On narrow
    screens the bars stack in document order and the day-header row
    (aria-hidden in the HTML) is hidden — each bar carries its own dates
    in .sc-dates. */
 .schedule-chart {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   gap: 0.5rem;
   padding: 0;
   margin: 0 0 1rem;
@@ -579,31 +580,43 @@ tbody th {
 }
 
 .sc-bar--concur {
-  grid-column: 2 / span 4;
+  grid-column: 4 / span 4;
   grid-row: 2;
   background: var(--primary);
   color: #fff;
 }
 
 .sc-bar--qest-formats {
-  grid-column: 2 / span 3;
+  grid-column: 4 / span 3;
   grid-row: 3;
   background: var(--primary-deep);
   color: #fff;
 }
 
 .sc-bar--reception {
-  grid-column: 1;
+  grid-column: 3;
   grid-row: 4;
   background: var(--gray-1);
   border: 1px solid var(--gray-3);
 }
 
 .sc-bar--social {
-  grid-column: 3;
+  grid-column: 5;
   grid-row: 4;
   background: var(--gray-1);
   border: 1px solid var(--gray-3);
+}
+
+.sc-bar--annalucafest {
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 2;
+  background: #fff;
+  border: 2px solid var(--accent);
+  color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 .sc-bar--workshops {
@@ -617,11 +630,11 @@ tbody th {
 }
 
 .sc-bar--workshops-pre {
-  grid-column: 1;
+  grid-column: 3;
 }
 
 .sc-bar--workshops-post {
-  grid-column: 6;
+  grid-column: 8;
 }
 
 @media (max-width: 39em) {
@@ -630,7 +643,7 @@ tbody th {
   }
 }
 
-@media (max-width: 42em) {
+@media (max-width: 52em) {
   .schedule-chart {
     grid-template-columns: 1fr;
   }
