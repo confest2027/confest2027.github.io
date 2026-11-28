@@ -2,7 +2,7 @@
 
 Static site for **CONFEST 2027** — the umbrella conference on concurrency theory
 and formal methods — hosted by the IMT School for Advanced Studies Lucca,
-Lucca, Italy, **September 6–11, 2027**: pre-conference workshops on Monday, September 6, CONCUR Tuesday to Friday, September 7–10, QEST+FORMATS Wednesday to Friday, September 8–10, and post-conference workshops on Saturday, September 11.
+Lucca, Italy, **September 4–11, 2027**: AnnaLucaFest on Saturday and Sunday, September 4–5, pre-conference workshops on Monday, September 6, CONCUR Tuesday to Friday, September 7–10, QEST+FORMATS Tuesday to Thursday, September 7–9, and post-conference workshops on Saturday, September 11.
 
 Plain HTML + CSS. **No build step, no framework, no JavaScript.** Every page is a
 file you edit directly. Deployed on GitHub Pages from `docs/` on `main`.
@@ -32,6 +32,8 @@ Branching and publishing protocol: see [AGENTS.md](AGENTS.md).
     │   └── index.html          CONCUR 2027 mini-site (self-contained)
     ├── qest-formats/
     │   └── index.html          QEST+FORMATS 2027 mini-site (structural mirror of concur/)
+    ├── annalucafest/
+    │   └── index.html          AnnaLucaFest (4–5 September) page
     ├── workshops/
     │   ├── index.html          Workshop list + Call for Workshops
     │   └── _template.html      Skeleton for hosted workshops (never linked)
@@ -64,6 +66,7 @@ Branching and publishing protocol: see [AGENTS.md](AGENTS.md).
    `index.html`, `registration.html`, `program.html`, `speakers.html`,
    `organization.html`, `code-of-conduct.html`, `venue.html`, `travel.html`,
    `accommodation.html`, `concur/index.html`, `qest-formats/index.html`,
+   `annalucafest/index.html`,
    `workshops/index.html`, `workshops/_template.html`, and any
    `workshops/<slug>/index.html`.
 
@@ -142,11 +145,12 @@ link (`class="external"`) — no folder needed.
   `.hero-layout` (stacking above them below 48em) with the dates and buttons
   full width underneath; the **grey badge** sits in the footer brand column
   (`.footer-brand img`). The badge also serves as the SVG favicon.
-  Nav-link padding is 0.55rem rather than 0.65rem so the mark plus all 11 labels
-  still fit on one row at the container's full width.
+  Nav-link padding is 0.45rem rather than 0.65rem, and the Accommodation page is
+  labelled "Stay" in the nav, so the mark plus all 12 labels still fit on one row
+  at the container's full width.
 - Components: sticky header + wrapping nav (pure CSS), `.card-grid`
   (auto-fit, min 320px), `.table-scroll` for wide tables, `.dates-strip`,
-  `.schedule-chart` (week-overview bars), `.news-timeline`, `.notice` / `.notice--warning` (e.g. the ZTL
+  `.schedule-chart` (week-overview bars, eight columns Sat 4 – Sat 11, stacked below 52em), `.news-timeline`, `.notice` / `.notice--warning` (e.g. the ZTL
   note and the early-booking warning), `.btn` / `.btn-secondary`, `.tbd`, print rules for `program.html`.
 
 ## Deployment (GitHub Pages)
