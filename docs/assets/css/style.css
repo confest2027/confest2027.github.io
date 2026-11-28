@@ -461,6 +461,32 @@ a:focus {
   padding-top: 0.5rem;
 }
 
+/* Events grid (homepage): each card spans five rows of the grid and adopts
+   them as a subgrid, so title, subtitle and dates sit on shared tracks and
+   line up across a row whatever their length. Rows: title, subtitle,
+   dates, optional extra (e.g. Workshop list), button (always last). */
+.card-grid--events {
+  grid-auto-rows: auto;
+}
+
+.card-grid--events .card {
+  display: grid;
+  grid-row: span 5;
+  grid-template-rows: subgrid;
+  row-gap: 0.5rem;
+  align-content: start;
+}
+
+.card-grid--events .card h3,
+.card-grid--events .card .card-sub {
+  min-block-size: 0;
+}
+
+.card-grid--events .card .card-cta {
+  grid-row: -2 / -1;
+  align-self: end;
+}
+
 /* Accent variant (e.g. Workshops card) */
 .card--accent {
   border-top-color: var(--accent);
